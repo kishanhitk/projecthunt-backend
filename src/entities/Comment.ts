@@ -5,12 +5,11 @@ import { User } from "./User";
 
 @Entity()
 export class Comment extends BaseEntity {
-    
   @ManyToOne(() => User)
   @JoinTable()
   user: User;
 
-  @OneToOne(() => Project)
+  @ManyToOne(() => Project)
   @JoinTable()
   project: Project;
 
